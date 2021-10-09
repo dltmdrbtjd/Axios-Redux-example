@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { postCreators } from './redux/post';
@@ -8,7 +8,7 @@ function App() {
   const post = useSelector((state) => state.post.list);
 
   useEffect(() => {
-    dispatch(postCreators.getPost());
+    dispatch(postCreators.getPostMiddleware());
   }, []);
 
   return (
@@ -16,7 +16,7 @@ function App() {
       {post &&
         post.map((item) => {
           return (
-            <div>
+            <div key={item.id}>
               <h2>{item.title}</h2>
               <p>{item.body}</p>
             </div>

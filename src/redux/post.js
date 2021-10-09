@@ -16,7 +16,7 @@ const initialState = {
 };
 
 // middleware
-const getPost = () => {
+const getPostMiddleware = () => {
   return (dispatch) => {
     apis
       .getPost()
@@ -30,7 +30,7 @@ const getPost = () => {
   };
 };
 
-const addPost = (post) => {
+const addPostMiddleware = (post) => {
   return (dispatch) => {
     apis
       .createPost(post)
@@ -43,6 +43,7 @@ const addPost = (post) => {
   };
 };
 
+// reducer
 export default handleActions(
   {
     [LOAD_POST]: (state, action) =>
@@ -58,8 +59,8 @@ export default handleActions(
 );
 
 const postCreators = {
-  getPost,
-  addPost,
+  getPostMiddleware,
+  addPostMiddleware,
 };
 
 export { postCreators };
