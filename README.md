@@ -35,7 +35,6 @@ import axios from 'axios';
 const instance = axios.create({
   // 기본적으로 우리가 바라볼 서버의 주소
   baseURL: 'http://localhost:4000/',
-  // headers에는 나중에 토큰을 넣어도되고 원하는 방식으로 활용해주시면 됩니다.
   headers: {
     'content-type': 'application/json;charset=UTF-8',
     accept: 'application/json',
