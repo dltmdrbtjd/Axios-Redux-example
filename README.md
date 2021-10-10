@@ -13,7 +13,6 @@
 - Axios
 - json-server
 - Redux-thunk
-- immer
 
 ## 실행하는 방법
 ```javascript
